@@ -1,209 +1,59 @@
-/* =========================================================
-   NIKOLAI MADULA — PORTFOLIO JAVASCRIPT
-========================================================= */
+/* ================= CONTACT FORM ================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
-    /* ================= MOBILE MENU ================= */
+if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+        const submitButton = contactForm.querySelector(".contact-submit");
+        const originalButton = submitButton.innerHTML;
 
-    if (menuToggle && navMenu) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <span>Sending...</span>
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        `;
 
-        menuToggle.addEventListener("click", () => {
+        formStatus.textContent = "";
+        formStatus.className = "form-status";
 
-            navMenu.classList.toggle("show");
+        try {
+            const formData = new FormData(contactForm);
 
-            const icon = menuToggle.querySelector("i");
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json"
+                },
+                body: formData
+            });
 
-            if (navMenu.classList.contains("show")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
+            const result = await response.json();
+
+            if (response.ok && result.success !== false) {
+                formStatus.textContent =
+                    "Message sent successfully! I'll get back to you soon.";
+
+                formStatus.classList.add("success");
+                contactForm.reset();
             } else {
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
+                throw new Error("Submission failed.");
             }
 
-        });
+        } catch (error) {
 
+            formStatus.textContent =
+                "Something went wrong. Please try again or email me directly.";
 
-        /* Close menu when clicking a link */
+            formStatus.classList.add("error");
 
-        navMenu.querySelectorAll("a").forEach(link => {
+        } finally {
 
-            link.addEventListener("click", () => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButton;
 
-                navMenu.classList.remove("show");
-
-                const icon = menuToggle.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            });
-
-        });
-
-    }
-
-
-    /* ================= ACTIVE NAVIGATION ================= */
-
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".navbar nav a");
-
-    function updateActiveNavigation() {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("active");
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", updateActiveNavigation);
-
-    updateActiveNavigation();
-
-
-    /* ================= SCROLL REVEAL ================= */
-
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .about-text, .about-stats, .skill-card, .project-card, .contact-box"
-    );
-
-    revealElements.forEach(element => {
-        element.classList.add("reveal");
-    });
-
-
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
         }
-    );
-
-
-    revealElements.forEach(element => {
-        observer.observe(element);
     });
-
-
-    /* ================= PROFILE CARD PARALLAX ================= */
-
-    const profileCard = document.querySelector(".profile-card");
-
-    if (profileCard && window.innerWidth > 700) {
-
-        document.addEventListener("mousemove", (event) => {
-
-            const x = (window.innerWidth / 2 - event.clientX) / 80;
-            const y = (window.innerHeight / 2 - event.clientY) / 80;
-
-            profileCard.style.transform =
-                `rotate(${4 + x * 0.15}deg)
-                 translate(${x}px, ${y}px)`;
-
-        });
-
-    }
-
-
-    /* ================= IMAGE FALLBACK ================= */
-
-    const profileImage = document.querySelector(".profile-image");
-    const imagePlaceholder = document.querySelector(".image-placeholder");
-
-    if (profileImage && imagePlaceholder) {
-
-        profileImage.addEventListener("error", () => {
-
-            profileImage.style.display = "none";
-            imagePlaceholder.style.display = "flex";
-
-        });
-
-        profileImage.addEventListener("load", () => {
-
-            imagePlaceholder.style.display = "none";
-
-        });
-
-    }
-
-
-    /* ================= CURRENT YEAR ================= */
-
-    const footerText = document.querySelector("footer p");
-
-    if (footerText) {
-
-        const currentYear = new Date().getFullYear();
-
-        footerText.innerHTML =
-            `Designed & built by Nikolai Madula © ${currentYear}`;
-
-    }
-
-
-    /* ================= SMOOTH SCROLL ================= */
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-        anchor.addEventListener("click", function (event) {
-
-            const target = document.querySelector(this.getAttribute("href"));
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        });
-
-    });
-
-});
+}

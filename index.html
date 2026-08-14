@@ -545,16 +545,56 @@
 
                     <p>
                         Have an idea, project, or opportunity?
-                        I'd love to hear about it.
+                        Send me a message directly through this form.
                     </p>
 
-                    <a href="mailto:your@email.com" class="email-link">
-                        your@email.com
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="contact-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <small>EMAIL ME</small>
+                            <strong>nikolaimadula@gmail.com</strong>
+                        </div>
+                    </div>
 
                 </div>
 
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formsubmit.co/ajax/nikolaimadula@gmail.com"
+                    method="POST"
+                >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name"
+                                   placeholder="Your name" autocomplete="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email"
+                                   placeholder="your@email.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"
+                                  placeholder="Tell me about your idea..." required></textarea>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="New Portfolio Message — Nikolai Madula">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+
+                    <button type="submit" class="contact-submit">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                    <p class="form-status" id="formStatus" aria-live="polite"></p>
+                </form>
 
                 <div class="contact-decoration">
                     <span>N</span>
@@ -564,9 +604,6 @@
             </div>
 
         </section>
-
-    </main>
-
 
     <!-- ================= FOOTER ================= -->
 
