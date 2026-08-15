@@ -6399,3 +6399,117 @@ span {
     }
 
 }
+/* =========================================================
+   MOBILE CONTACT — PREMIUM POLISH
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-card {
+        width: 100%;
+        padding: 28px 20px;
+
+        border-radius: 24px;
+
+        box-sizing: border-box;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .contact-card:focus-within {
+        border-color: rgba(255, 45, 145, 0.3);
+
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.35),
+            0 0 35px rgba(255, 45, 145, 0.07);
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 16px 17px;
+
+        border-radius: 14px;
+
+        font-size: 16px;
+
+        outline: none;
+
+        transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+        border-color: rgba(255, 45, 145, 0.55);
+
+        box-shadow:
+            0 0 0 3px rgba(255, 45, 145, 0.08),
+            0 0 25px rgba(255, 45, 145, 0.08);
+    }
+
+    .contact-card textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .contact-submit {
+        width: 100%;
+        min-height: 62px;
+
+        margin-top: 8px;
+
+        border-radius: 16px;
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .contact-submit:active {
+        transform: scale(0.98);
+    }
+
+    .form-status {
+        margin-top: 16px;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        text-align: center;
+    }
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 420px) {
+
+    .contact-card {
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        padding: 15px;
+    }
+
+    .contact-card textarea {
+        min-height: 135px;
+    }
+}
