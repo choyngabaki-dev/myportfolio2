@@ -2399,3 +2399,3104 @@ body::before {
     }
 
 }
+
+/* =========================================================
+   PREMIUM V2 — HERO + NAVBAR
+   ========================================================= */
+
+/* ---------- PREMIUM NAVBAR ---------- */
+
+.navbar {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 20, 20, 0.82),
+            rgba(5, 5, 5, 0.72)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+
+    transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Pink light underneath navbar */
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+    inset: auto 15% -1px 15%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 45, 141, 0.65),
+        transparent
+    );
+
+    filter: blur(2px);
+
+    pointer-events: none;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.logo::after {
+    content: "";
+
+    position: absolute;
+    width: 7px;
+    height: 7px;
+
+    right: -8px;
+    bottom: 3px;
+
+    background: var(--pink);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--pink),
+        0 0 18px rgba(255, 45, 141, 0.55);
+
+    animation: logoPulse 2.5s ease-in-out infinite;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+@keyframes logoPulse {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* ---------- NAV LINKS ---------- */
+
+.navbar nav a {
+    position: relative;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.navbar nav a::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--pink);
+
+    box-shadow: 0 0 10px rgba(255, 45, 141, 0.8);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.navbar nav a:hover::before,
+.navbar nav a.active::before {
+    width: 100%;
+}
+
+
+/* ---------- LET'S TALK BUTTON ---------- */
+
+.nav-button {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 45, 141, 0.04);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 45, 141, 0.05),
+        0 0 0 rgba(255, 45, 141, 0);
+}
+
+.nav-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.nav-button:hover::before {
+    left: 140%;
+}
+
+.nav-button:hover {
+    box-shadow:
+        0 10px 30px rgba(255, 45, 141, 0.18),
+        0 0 25px rgba(255, 45, 141, 0.08);
+}
+
+
+/* =========================================================
+   PREMIUM HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+}
+
+
+/* Large atmospheric pink glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    top: 50%;
+    left: 42%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.12) 0%,
+        rgba(255, 45, 141, 0.045) 35%,
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* Subtle grid */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* ---------- AVAILABILITY ---------- */
+
+.availability {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ---------- STATUS DOT ---------- */
+
+.status-dot {
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+
+/* ---------- HERO NAME ---------- */
+
+.hero h1 {
+    position: relative;
+
+    text-shadow:
+        0 0 60px rgba(255, 255, 255, 0.04);
+}
+
+.hero h1 span {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #ff2d8d,
+        #ff6bad,
+        #ff2d8d
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: pinkFlow 5s ease-in-out infinite;
+
+    -webkit-text-stroke: 0;
+
+    color: transparent;
+}
+
+@keyframes pinkFlow {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+
+/* ---------- HERO DESCRIPTION ---------- */
+
+.hero-description {
+    line-height: 1.8;
+}
+
+
+/* ---------- PREMIUM BUTTONS ---------- */
+
+.primary-button,
+.secondary-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-button {
+    box-shadow:
+        0 12px 30px rgba(255, 45, 141, 0.18);
+}
+
+.primary-button::before,
+.secondary-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.20),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.65s ease;
+}
+
+.primary-button:hover::before,
+.secondary-button:hover::before {
+    left: 140%;
+}
+
+.primary-button:hover {
+    box-shadow:
+        0 18px 45px rgba(255, 45, 141, 0.28),
+        0 0 35px rgba(255, 45, 141, 0.08);
+}
+
+
+/* ---------- SOCIAL ICONS ---------- */
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.018);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(10px);
+}
+
+.social-links a:hover {
+    box-shadow:
+        0 10px 25px rgba(255, 45, 141, 0.22),
+        0 0 20px rgba(255, 45, 141, 0.10);
+}
+
+
+/* =========================================================
+   PROFILE CARD — MORE LUXURY
+   ========================================================= */
+
+.profile-card {
+    border-color: rgba(255, 255, 255, 0.13);
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.65),
+        0 0 70px rgba(255, 45, 141, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+
+    transition:
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.profile-card:hover {
+    border-color: rgba(255, 45, 141, 0.38);
+
+    box-shadow:
+        0 45px 110px rgba(0, 0, 0, 0.72),
+        0 0 90px rgba(255, 45, 141, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+
+/* Image becomes more cinematic */
+
+.profile-image {
+    filter: saturate(0.92) contrast(1.04);
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.5s ease;
+}
+
+.profile-card:hover .profile-image {
+    transform: scale(1.035);
+    filter: saturate(1.05) contrast(1.06);
+}
+
+
+/* ---------- FLOATING CARDS ---------- */
+
+.floating-card {
+    border-color: rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 20, 20, 0.82),
+            rgba(5, 5, 5, 0.72)
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(22px);
+}
+
+.card-top {
+    animation: floatingTop 5s ease-in-out infinite;
+}
+
+.card-bottom {
+    animation: floatingBottom 6s ease-in-out infinite;
+}
+
+@keyframes floatingTop {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes floatingBottom {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   PREMIUM V2 — PROJECTS
+   ========================================================= */
+
+.projects {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient section glow */
+
+.projects::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: 15%;
+    right: -250px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.10),
+        transparent 70%
+    );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* ---------- PROJECT GRID ---------- */
+
+.projects-grid {
+    gap: 22px;
+}
+
+
+/* ---------- PROJECT CARD ---------- */
+
+.project-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.085);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.4s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* Pink spotlight */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -130px;
+    right: -130px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.18),
+        transparent 70%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    pointer-events: none;
+}
+
+
+/* Bottom shine */
+
+.project-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 45, 141, 0.5),
+        transparent
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* Hover */
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(255, 45, 141, 0.30);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.50),
+        0 0 45px rgba(255, 45, 141, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.project-card:hover::before,
+.project-card:hover::after {
+    opacity: 1;
+}
+
+
+/* ---------- PROJECT IMAGE ---------- */
+
+.project-image {
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* Image zoom */
+
+.project-image img {
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+
+    filter:
+        saturate(1.08)
+        contrast(1.04);
+}
+
+
+/* Image overlay */
+
+.project-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(0, 0, 0, 0.45)
+        );
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+/* ---------- PROJECT CONTENT ---------- */
+
+.project-content {
+    position: relative;
+
+    padding: 25px;
+}
+
+
+/* Project number */
+
+.project-number {
+    color: rgba(255, 45, 141, 0.75);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 12px;
+}
+
+
+/* Project title */
+
+.project-content h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 24px;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-content h3 {
+    color: var(--pink);
+}
+
+
+/* Project description */
+
+.project-content p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 520px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- TECHNOLOGY TAGS ---------- */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.project-tags span {
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.project-card:hover .project-tags span {
+    border-color: rgba(255, 45, 141, 0.16);
+
+    color: #ddd;
+}
+
+
+/* ---------- PROJECT LINK ---------- */
+
+.project-link {
+    position: absolute;
+
+    right: 24px;
+    bottom: 24px;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.project-link:hover {
+    transform: translate(3px, -3px);
+
+    background: var(--pink);
+
+    border-color: var(--pink);
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(255, 45, 141, 0.30);
+}
+
+
+/* ---------- PROJECT CARD STAGGER ---------- */
+
+.project-card:nth-child(2) {
+    transition-delay: 0.04s;
+}
+
+.project-card:nth-child(3) {
+    transition-delay: 0.08s;
+}
+
+.project-card:nth-child(4) {
+    transition-delay: 0.12s;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 21px;
+    }
+
+    .project-link {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+/* =========================================================
+   PREMIUM V2 — ABOUT + STATS
+   ========================================================= */
+
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient glow */
+
+.about::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    left: -250px;
+    top: 20%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.09),
+        transparent 70%
+    );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* ---------- ABOUT TEXT ---------- */
+
+.about-text {
+    position: relative;
+}
+
+.about-text .large-text {
+    color: #e8e8e8;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(22px, 2.2vw, 30px);
+
+    line-height: 1.45;
+
+    letter-spacing: -0.035em;
+
+    max-width: 720px;
+}
+
+.about-text strong {
+    color: white;
+
+    position: relative;
+}
+
+.about-text strong::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -3px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        transparent
+    );
+
+    opacity: 0.7;
+}
+
+
+/* ---------- ABOUT PARAGRAPHS ---------- */
+
+.about-text p {
+    font-size: 14px;
+
+    line-height: 1.85;
+
+    color: #858585;
+
+    max-width: 680px;
+}
+
+
+/* ---------- STATS PANEL ---------- */
+
+.about-stats {
+    position: relative;
+
+    padding: 10px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            transparent
+        );
+}
+
+
+/* Individual stat */
+
+.stat {
+    position: relative;
+
+    padding: 30px 0;
+
+    transition:
+        padding-left 0.35s ease,
+        background 0.35s ease;
+}
+
+.stat::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+    top: 50%;
+
+    width: 2px;
+    height: 0;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 15px rgba(255, 45, 141, 0.8);
+
+    transform: translateY(-50%);
+
+    transition: height 0.35s ease;
+}
+
+.stat:hover {
+    padding-left: 12px;
+}
+
+.stat:hover::before {
+    height: 55%;
+}
+
+
+/* Big number */
+
+.stat strong {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    font-weight: 600;
+
+    letter-spacing: -0.06em;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ff4c9c
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 25px rgba(255, 45, 141, 0.08);
+
+    transition:
+        transform 0.35s ease;
+}
+
+.stat:hover strong {
+    transform: translateX(3px);
+}
+
+
+/* Stat label */
+
+.stat span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* ---------- ABOUT GRID ---------- */
+
+.about-grid {
+    align-items: start;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .about-text .large-text {
+        font-size: 24px;
+    }
+
+    .about-stats {
+        max-width: 650px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .about-text .large-text {
+        font-size: 21px;
+
+        line-height: 1.5;
+    }
+
+    .about-text p {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+    .stat {
+        padding: 22px 0;
+    }
+
+    .stat strong {
+        font-size: 34px;
+    }
+}
+
+/* =========================================================
+   PREMIUM V2 — SKILLS
+   ========================================================= */
+
+.skills {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient pink atmosphere */
+
+.skills::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.07),
+        transparent 68%
+    );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* ---------- SKILL GRID ---------- */
+
+.skills-grid {
+    position: relative;
+
+    gap: 18px;
+}
+
+
+/* ---------- SKILL CARD ---------- */
+
+.skill-card {
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.085);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.4s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* Large decorative number */
+
+.skill-card::after {
+    content: attr(data-number);
+
+    position: absolute;
+
+    right: 20px;
+    top: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 72px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.018);
+
+    pointer-events: none;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* Pink spotlight */
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    bottom: -110px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.22),
+        transparent 68%
+    );
+
+    opacity: 0;
+
+    filter: blur(15px);
+
+    transition: opacity 0.5s ease;
+
+    pointer-events: none;
+}
+
+
+/* ---------- HOVER ---------- */
+
+.skill-card:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(255, 45, 141, 0.30);
+
+    box-shadow:
+        0 35px 85px rgba(0, 0, 0, 0.48),
+        0 0 45px rgba(255, 45, 141, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-card:hover::after {
+    color: rgba(255, 45, 141, 0.055);
+
+    transform: translate(-4px, 4px);
+}
+
+
+/* ---------- ICON ---------- */
+
+.skill-icon {
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 28px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 45, 141, 0.13),
+            rgba(255, 45, 141, 0.035)
+        );
+
+    border: 1px solid rgba(255, 45, 141, 0.17);
+
+    color: var(--pink);
+
+    font-size: 18px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 8px 25px rgba(255, 45, 141, 0.05);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform:
+        translateY(-3px)
+        rotate(-3deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 45, 141, 0.22),
+            rgba(255, 45, 141, 0.06)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(255, 45, 141, 0.18),
+        0 0 25px rgba(255, 45, 141, 0.08);
+}
+
+
+/* ---------- SKILL TITLE ---------- */
+
+.skill-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 21px;
+
+    letter-spacing: -0.035em;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover h3 {
+    color: white;
+}
+
+
+/* ---------- SKILL DESCRIPTION ---------- */
+
+.skill-card p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    max-width: 280px;
+
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover p {
+    color: #999;
+}
+
+
+/* ---------- SKILL ACCENT LINE ---------- */
+
+.skill-card .pink-line {
+    width: 28px;
+
+    height: 2px;
+
+    margin-top: 22px;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 12px rgba(255, 45, 141, 0.55);
+
+    transition:
+        width 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.skill-card:hover .pink-line {
+    width: 55px;
+
+    box-shadow:
+        0 0 20px rgba(255, 45, 141, 0.75);
+}
+
+
+/* ---------- CARD STAGGER ---------- */
+
+.skill-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.skill-card:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.skill-card:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.skill-card:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.skill-card:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.skill-card:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: 210px;
+
+        padding: 24px;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .skill-card::after {
+        font-size: 60px;
+    }
+}
+
+/* =========================================================
+   PREMIUM V2 — CONTACT
+   ========================================================= */
+
+.contact {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Big ambient glow */
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.12),
+        rgba(255, 45, 141, 0.025) 38%,
+        transparent 70%
+    );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* ---------- CONTACT CARD ---------- */
+
+.contact-card {
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 45, 141, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    box-shadow:
+        0 40px 110px rgba(0, 0, 0, 0.50),
+        0 0 80px rgba(255, 45, 141, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(25px);
+
+    transition:
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.contact-card:hover {
+    border-color: rgba(255, 45, 141, 0.25);
+
+    box-shadow:
+        0 45px 120px rgba(0, 0, 0, 0.58),
+        0 0 100px rgba(255, 45, 141, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+
+/* ---------- DECORATIVE ORB ---------- */
+
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -130px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 45, 141, 0.20),
+            transparent 68%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    animation: contactOrb 7s ease-in-out infinite;
+}
+
+@keyframes contactOrb {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-20px, 15px);
+    }
+}
+
+
+/* ---------- CONTACT EYEBROW ---------- */
+
+.contact-card .eyebrow {
+    color: rgba(255, 45, 141, 0.85);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- CONTACT HEADING ---------- */
+
+.contact-card h2 {
+    position: relative;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(42px, 6vw, 78px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.065em;
+
+    max-width: 850px;
+}
+
+.contact-card h2 span {
+    color: var(--pink);
+
+    text-shadow:
+        0 0 35px rgba(255, 45, 141, 0.15);
+}
+
+
+/* ---------- CONTACT DESCRIPTION ---------- */
+
+.contact-card p {
+    position: relative;
+
+    max-width: 560px;
+
+    color: #8b8b8b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ---------- EMAIL LINK ---------- */
+
+.contact-email {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    color: white;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.contact-email::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -7px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        transparent
+    );
+
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+.contact-email:hover {
+    color: var(--pink);
+}
+
+.contact-email:hover::after {
+    transform: scaleX(0.65);
+}
+
+
+/* ---------- CONTACT BUTTON ---------- */
+
+.contact-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 34px;
+
+    padding: 15px 24px;
+
+    border-radius: 999px;
+
+    color: white;
+
+    background: var(--pink);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 15px 35px rgba(255, 45, 141, 0.20);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.contact-button::before {
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+    top: 0;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.contact-button:hover::before {
+    left: 140%;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 50px rgba(255, 45, 141, 0.30),
+        0 0 35px rgba(255, 45, 141, 0.10);
+}
+
+
+/* ---------- CONTACT SIDE DETAILS ---------- */
+
+.contact-details {
+    position: relative;
+
+    display: grid;
+
+    gap: 14px;
+}
+
+.contact-detail {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #888;
+
+    font-size: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.contact-detail:hover {
+    transform: translateX(5px);
+
+    border-color: rgba(255, 45, 141, 0.18);
+
+    background: rgba(255, 45, 141, 0.035);
+
+    color: #aaa;
+}
+
+.contact-detail i {
+    color: var(--pink);
+
+    font-size: 15px;
+}
+
+
+/* ---------- CONTACT STATUS ---------- */
+
+.contact-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 28px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 0.06em;
+}
+
+.contact-status::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 10px rgba(255, 45, 141, 0.75);
+
+    animation: contactStatus 2s ease-in-out infinite;
+}
+
+@keyframes contactStatus {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .contact-card {
+        padding: 32px 24px;
+    }
+
+    .contact-card h2 {
+        font-size: 43px;
+
+        letter-spacing: -0.055em;
+    }
+
+    .contact-card p {
+        font-size: 13px;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+    .contact-detail {
+        padding: 13px 14px;
+    }
+}
+
+/* =========================================================
+   FINAL POLISH — NIKOLAI MADULA PORTFOLIO
+   Black × Pink Luxury Finish
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL SMOOTHNESS
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   2. PREMIUM TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(255, 45, 141, 0.85);
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: rgba(255, 45, 141, 0.85);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   3. PREMIUM SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 45, 141, 0.95),
+        rgba(255, 45, 141, 0.35)
+    );
+
+    border-radius: 999px;
+
+    border: 2px solid #050505;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff2d8d;
+}
+
+
+/* Firefox */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ff2d8d #050505;
+}
+
+
+/* =========================================================
+   4. PREMIUM FOCUS STATES
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgba(255, 45, 141, 0.8);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   5. GLOBAL IMAGE POLISH
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+
+    image-rendering: auto;
+}
+
+
+/* =========================================================
+   6. LINKS
+   ========================================================= */
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   7. PREMIUM NAVBAR
+   ========================================================= */
+
+header,
+.navbar,
+nav {
+    -webkit-backdrop-filter: blur(18px);
+}
+
+header.scrolled,
+.navbar.scrolled,
+nav.scrolled {
+    background: rgba(5, 5, 5, 0.72);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   8. NAV LINK MICRO-INTERACTION
+   ========================================================= */
+
+nav a {
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: #ff2d8d;
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 12px rgba(255, 45, 141, 0.55);
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 18px;
+}
+
+
+/* =========================================================
+   9. PREMIUM BUTTON MICRO INTERACTION
+   ========================================================= */
+
+button,
+.btn,
+a[class*="btn"] {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active,
+.btn:active,
+a[class*="btn"]:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   10. SECTION DIVIDERS
+   ========================================================= */
+
+section {
+    position: relative;
+}
+
+section:not(:first-of-type)::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 7%;
+    right: 7%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.06),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   11. PREMIUM EYEBROWS
+   ========================================================= */
+
+.eyebrow,
+.section-label {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.eyebrow::before,
+.section-label::before {
+    content: "";
+
+    width: 18px;
+    height: 1px;
+
+    background: #ff2d8d;
+
+    box-shadow:
+        0 0 10px rgba(255, 45, 141, 0.55);
+}
+
+
+/* =========================================================
+   12. PREMIUM GLOW ORB
+   ========================================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 220px;
+    height: 220px;
+
+    left: -110px;
+    top: 50%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 45, 141, 0.055),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   13. INPUT POLISH
+   ========================================================= */
+
+input,
+textarea,
+select {
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgba(255, 45, 141, 0.45) !important;
+
+    background: rgba(255, 45, 141, 0.025);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 45, 141, 0.06),
+        0 0 25px rgba(255, 45, 141, 0.04);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   14. FORM PLACEHOLDER
+   ========================================================= */
+
+::placeholder {
+    color: #555;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   15. PREMIUM FOOTER
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.015),
+            transparent
+        );
+}
+
+footer a {
+    color: #777;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff2d8d;
+}
+
+
+/* =========================================================
+   16. PINK GLOW ON IMPORTANT WORDS
+   ========================================================= */
+
+.highlight,
+.pink,
+.accent {
+    color: #ff2d8d;
+
+    text-shadow:
+        0 0 25px rgba(255, 45, 141, 0.12);
+}
+
+
+/* =========================================================
+   17. PREMIUM CARD CONSISTENCY
+   ========================================================= */
+
+.card,
+.project-card,
+.skill-card,
+.profile-card,
+.contact-card {
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =========================================================
+   18. HOVER PERFORMANCE
+   ========================================================= */
+
+.project-card,
+.skill-card,
+.profile-card,
+.contact-card,
+button,
+.btn,
+a {
+    will-change: transform;
+}
+
+
+/* =========================================================
+   19. MOBILE POLISH
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    section:not(:first-of-type)::before {
+        left: 5%;
+        right: 5%;
+    }
+
+    /* Disable heavy hover movement on touch devices */
+
+    .project-card:hover,
+    .skill-card:hover,
+    .profile-card:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+
+    /* Keep buttons comfortable for tapping */
+
+    button,
+    .btn,
+    a[class*="btn"] {
+        min-height: 44px;
+    }
+
+    /* Prevent text from becoming too wide */
+
+    p {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   20. SMALL PHONE POLISH
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    .eyebrow,
+    .section-label {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   21. REDUCE MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   22. FINAL LUXURY ATMOSPHERE
+   ========================================================= */
+
+main {
+    position: relative;
+}
+
+main::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 45, 141, 0.025),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(255, 45, 141, 0.018),
+            transparent 28%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   END — NIKOLAI MADULA PREMIUM POLISH
+   ========================================================= */
+
+   /* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Slightly different reveal for cards */
+
+.project-card.reveal-on-scroll,
+.skill-card.reveal-on-scroll,
+.profile-card.reveal-on-scroll,
+.contact-card.reveal-on-scroll {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Active navigation */
+
+nav a.active {
+    color: #ffffff;
+}
+
+nav a.active::after {
+    width: 18px;
+}
+
+
+/* Don't animate when user prefers reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM MOBILE NAVIGATION
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #ff2d8d;
+}
+
+.menu-toggle.active {
+    color: #ff2d8d;
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar nav {
+        position: absolute;
+
+        top: calc(100% + 12px);
+        left: 16px;
+        right: 16px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 4px;
+
+        padding: 10px;
+
+        background: rgba(10, 10, 10, 0.94);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 18px;
+
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.55),
+            0 0 40px rgba(255, 45, 141, 0.06);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(0.98);
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+
+    /* OPEN MENU */
+
+    .navbar nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+
+        pointer-events: auto;
+    }
+
+
+    /* MOBILE LINKS */
+
+    .navbar nav a {
+        width: 100%;
+
+        padding: 14px 16px;
+
+        border-radius: 12px;
+
+        color: #aaa;
+
+        font-size: 14px;
+
+        transition:
+            color 0.25s ease,
+            background 0.25s ease,
+            padding-left 0.25s ease;
+    }
+
+    .navbar nav a::after {
+        display: none;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+        color: #ffffff;
+
+        background: rgba(255, 45, 141, 0.08);
+
+        padding-left: 20px;
+    }
+
+    .navbar nav a.active {
+        color: #ff2d8d;
+    }
+
+
+    /* HIDE LET'S TALK ON SMALL SCREENS */
+
+    .nav-button {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar nav {
+        left: 12px;
+        right: 12px;
+    }
+
+    .navbar nav a {
+        padding: 13px 14px;
+    }
+}
+
+/* =========================================================
+   PREMIUM FOOTER
+   ========================================================= */
+
+footer {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 38px 0;
+
+    margin-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 45, 141, 0.045),
+            transparent 45%
+        ),
+        #050505;
+}
+
+
+/* Footer top glow */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 50%;
+
+    width: 100px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: #ff2d8d;
+
+    box-shadow:
+        0 0 18px rgba(255, 45, 141, 0.7);
+
+    opacity: 0.8;
+}
+
+
+/* Footer logo */
+
+.footer-logo {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.08em;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.footer-logo span {
+    color: #ff2d8d;
+
+    text-shadow:
+        0 0 20px rgba(255, 45, 141, 0.35);
+}
+
+.footer-logo:hover {
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 25px rgba(255, 45, 141, 0.2);
+}
+
+
+/* Footer copyright */
+
+footer p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 0.02em;
+
+    text-align: center;
+}
+
+
+/* Back to top */
+
+.back-top {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.10em;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-top i {
+    display: grid;
+
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    color: #aaa;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-top:hover {
+    color: #ff2d8d;
+
+    transform: translateY(-2px);
+}
+
+.back-top:hover i {
+    color: #ffffff;
+
+    background: #ff2d8d;
+
+    border-color: #ff2d8d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(255, 45, 141, 0.25);
+}
+
+
+/* =========================================================
+   FOOTER MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    footer {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 18px;
+
+        padding: 32px 20px;
+    }
+
+    footer p {
+        order: 2;
+
+        line-height: 1.6;
+    }
+
+    .footer-logo {
+        order: 1;
+    }
+
+    .back-top {
+        order: 3;
+    }
+}
+
+
+/* Small phones */
+
+@media (max-width: 480px) {
+
+    footer {
+        padding: 28px 16px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE CLEANUP
+   ========================================================= */
+
+/* Prevent accidental horizontal scrolling */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Keep media inside their containers */
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+
+/* Prevent long text from breaking the layout */
+
+h1,
+h2,
+h3,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 130px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-image-wrapper {
+        margin: 20px auto 0;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* General spacing */
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 110px;
+
+        padding-bottom: 70px;
+
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 64px);
+
+        line-height: 0.98;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    /* Profile */
+
+    .profile-image-wrapper {
+        width: min(72vw, 320px);
+        height: min(72vw, 320px);
+    }
+
+
+    /* Skills */
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /* Contact */
+
+    .contact-card {
+        width: 100%;
+    }
+
+
+    /* Prevent buttons from overflowing */
+
+    .hero-buttons,
+    .contact-buttons {
+        max-width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .hero {
+        padding-top: 100px;
+
+        gap: 32px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
+    .profile-image-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .skill-card,
+    .project-card {
+        border-radius: 18px;
+    }
+
+
+    .skill-card {
+        padding: 22px;
+    }
+
+
+    .project-content {
+        padding: 20px;
+    }
+
+
+    .contact-card {
+        border-radius: 20px;
+    }
+
+
+    input,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .project-card:hover,
+    .skill-card:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+
+    nav a:hover::after {
+        width: 0;
+    }
+}
