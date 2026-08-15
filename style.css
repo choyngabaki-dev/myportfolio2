@@ -6512,4 +6512,97 @@ span {
     .contact-card textarea {
         min-height: 135px;
     }
+} 
+/* =========================================================
+   MOBILE FOOTER — PREMIUM POLISH
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    footer {
+        padding: 55px 20px 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+
+        gap: 18px;
+    }
+
+    .footer-logo {
+        font-size: 32px;
+        font-weight: 800;
+
+        letter-spacing: -1px;
+    }
+
+    footer p {
+        max-width: 280px;
+
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 1.6;
+
+        opacity: 0.55;
+    }
+
+    .back-top {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 9px;
+
+        min-height: 46px;
+        padding: 0 18px;
+
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 999px;
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .back-top:active {
+        transform: translateY(-2px);
+
+        background: rgba(255,45,145,0.08);
+
+        border-color: rgba(255,45,145,0.3);
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    button {
+        max-width: 100%;
+    }
 }
