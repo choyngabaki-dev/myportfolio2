@@ -6179,3 +6179,62 @@ span {
         margin-bottom: 30px !important;
     }
 }
+/* =========================================================
+   FINAL MOBILE NAVBAR POSITION FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: fixed !important;
+
+        top: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        transform: none !important;
+        translate: none !important;
+
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        padding: 12px 14px !important;
+
+        z-index: 99999 !important;
+    }
+
+    .navbar .logo {
+        position: static !important;
+
+        transform: none !important;
+        margin: 0 !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    .navbar .menu-toggle {
+        position: static !important;
+
+        transform: none !important;
+        margin: 0 0 0 auto !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    .navbar > nav {
+        /* JS opens this separately */
+        position: fixed !important;
+    }
+
+    .navbar > .nav-button {
+        display: none !important;
+    }
+}
