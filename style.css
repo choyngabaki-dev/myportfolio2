@@ -5524,3 +5524,458 @@ span {
     }
 
 }
+/* =========================================================
+   MOBILE HERO SPACING POLISH
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Give the hero more breathing room */
+    .hero {
+        padding-top: 150px;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    /* Hello text */
+    .hero h5,
+    .hero .eyebrow {
+        margin-bottom: 28px;
+    }
+
+    /* Main name */
+    .hero h1 {
+        line-height: 0.95;
+        margin-bottom: 42px;
+    }
+
+    /* Add breathing room between Nikolai and Madula */
+    .hero h1 span {
+        display: block;
+        margin-top: 8px;
+    }
+
+    /* Subtitle */
+    .hero h2,
+    .hero .hero-subtitle {
+        line-height: 1.45;
+        margin-bottom: 48px;
+    }
+
+    /* Description */
+    .hero p {
+        line-height: 1.7;
+        margin-bottom: 42px;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        gap: 16px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        min-height: 64px;
+    }
+
+}
+/* =========================================================
+   PREMIUM MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 9999;
+
+        transition:
+            background 0.4s ease,
+            border-color 0.4s ease,
+            box-shadow 0.4s ease,
+            transform 0.4s ease;
+    }
+
+    .navbar.scrolled {
+        background: rgba(12, 8, 12, 0.88);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+
+        border-color: rgba(255, 255, 255, 0.12);
+
+        box-shadow:
+            0 15px 50px rgba(0, 0, 0, 0.45),
+            0 0 30px rgba(255, 40, 140, 0.06);
+    }
+
+
+    /* HAMBURGER BUTTON */
+    .menu-toggle {
+        position: relative;
+        z-index: 10001;
+
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 14px;
+
+        background: rgba(255,255,255,0.035);
+
+        color: white;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.35s ease,
+            background 0.35s ease,
+            border-color 0.35s ease;
+    }
+
+    .menu-toggle:hover {
+        background: rgba(255, 45, 145, 0.10);
+        border-color: rgba(255, 45, 145, 0.30);
+    }
+
+    .menu-toggle.active {
+        background: rgba(255, 45, 145, 0.12);
+        border-color: rgba(255, 45, 145, 0.35);
+
+        transform: rotate(90deg);
+    }
+
+    .menu-toggle i {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+
+    /* MOBILE MENU PANEL */
+    #navMenu {
+        position: fixed;
+
+        top: 82px;
+        left: 16px;
+        right: 16px;
+
+        padding: 18px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(25, 12, 20, 0.97),
+                rgba(10, 7, 11, 0.96)
+            );
+
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 24px;
+
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+
+        box-shadow:
+            0 30px 80px rgba(0,0,0,0.55),
+            0 0 50px rgba(255,30,130,0.08);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform:
+            translateY(-18px)
+            scale(0.97);
+
+        transform-origin: top center;
+
+        transition:
+            opacity 0.35s ease,
+            visibility 0.35s ease,
+            transform 0.4s cubic-bezier(.2,.8,.2,1);
+
+        overflow: hidden;
+    }
+
+
+    /* little pink glow inside menu */
+    #navMenu::before {
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        top: -100px;
+        right: -70px;
+
+        background: rgba(255, 35, 140, 0.16);
+
+        filter: blur(60px);
+
+        pointer-events: none;
+    }
+
+
+    /* OPEN STATE */
+    #navMenu.mobile-open {
+        opacity: 1;
+        visibility: visible;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+
+    /* MENU LINKS */
+    #navMenu a {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        min-height: 58px;
+
+        padding: 0 18px;
+
+        border-radius: 15px;
+
+        color: rgba(255,255,255,0.72);
+
+        font-size: 16px;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        border: 1px solid transparent;
+
+        transform: translateX(-12px);
+
+        opacity: 0;
+
+        transition:
+            color 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    /* STAGGERED ANIMATION */
+    #navMenu.mobile-open a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #navMenu.mobile-open a:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    #navMenu.mobile-open a:nth-child(2) {
+        transition-delay: 0.10s;
+    }
+
+    #navMenu.mobile-open a:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+
+    #navMenu.mobile-open a:nth-child(4) {
+        transition-delay: 0.20s;
+    }
+
+    #navMenu.mobile-open a:nth-child(5) {
+        transition-delay: 0.25s;
+    }
+
+
+    /* LINK HOVER / TAP */
+    #navMenu a:hover {
+        color: white;
+
+        background: rgba(255,255,255,0.055);
+
+        border-color: rgba(255,255,255,0.08);
+
+        transform: translateX(5px);
+    }
+
+
+    /* ACTIVE LINK */
+    #navMenu a.active {
+        color: white;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,45,145,0.14),
+                rgba(255,45,145,0.035)
+            );
+
+        border-color: rgba(255,45,145,0.18);
+    }
+
+    #navMenu a.active::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+
+        margin-right: 12px;
+
+        border-radius: 50%;
+
+        background: #ff2d91;
+
+        box-shadow:
+            0 0 10px #ff2d91,
+            0 0 20px rgba(255,45,145,0.6);
+    }
+
+
+    /* HIDE DESKTOP LET'S TALK */
+    .navbar > .nav-button {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    #navMenu {
+        top: 78px;
+        left: 12px;
+        right: 12px;
+
+        padding: 14px;
+
+        border-radius: 20px;
+    }
+
+    #navMenu a {
+        min-height: 54px;
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM MOBILE HERO SPACING
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100svh;
+        padding: 145px 24px 80px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    /* Available badge */
+    .hero .availability,
+    .hero .status,
+    .hero .available {
+        margin-bottom: 70px;
+    }
+
+    /* Hello text */
+    .hero h5,
+    .hero .eyebrow {
+        margin-bottom: 28px;
+    }
+
+    /* Main name */
+    .hero h1 {
+        line-height: 0.95;
+        margin-bottom: 38px;
+    }
+
+    /* Nikolai / Madula spacing */
+    .hero h1 span {
+        display: block;
+        margin-top: 8px;
+    }
+
+    /* Subtitle */
+    .hero h2,
+    .hero .hero-subtitle {
+        margin-top: 0;
+        margin-bottom: 28px;
+        line-height: 1.35;
+    }
+
+    /* Description */
+    .hero p {
+        line-height: 1.7;
+        margin-bottom: 38px;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        gap: 14px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        min-height: 64px;
+        border-radius: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 135px;
+    }
+
+    .hero .availability,
+    .hero .status,
+    .hero .available {
+        margin-bottom: 58px;
+    }
+
+    .hero h1 {
+        font-size: clamp(54px, 15vw, 78px);
+        line-height: 0.92;
+        margin-bottom: 34px;
+    }
+
+    .hero h2,
+    .hero .hero-subtitle {
+        font-size: 22px;
+        line-height: 1.4;
+        margin-bottom: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 34px;
+    }
+}
