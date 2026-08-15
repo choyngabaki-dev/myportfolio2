@@ -5979,3 +5979,203 @@ span {
         margin-bottom: 34px;
     }
 }
+/* =========================================================
+   MOBILE FIX — RESTORE PROPER LAYOUT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- NAVBAR FIX ---------- */
+
+    .navbar {
+        position: fixed !important;
+        top: 16px !important;
+        left: 16px !important;
+        right: 16px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 18px !important;
+
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        z-index: 9999 !important;
+    }
+
+    .navbar .logo {
+        display: flex !important;
+        align-items: center !important;
+
+        flex-shrink: 0 !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .navbar .menu-toggle {
+        display: flex !important;
+
+        flex-shrink: 0 !important;
+
+        margin-left: auto !important;
+    }
+
+    /* Don't let the desktop button interfere */
+    .navbar > .nav-button {
+        display: none !important;
+    }
+
+
+    /* ---------- HERO FIX ---------- */
+
+    .hero {
+        min-height: auto !important;
+
+        padding-top: 150px !important;
+        padding-bottom: 70px !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    /* Available badge */
+
+    .hero .availability,
+    .hero .status,
+    .hero .available {
+        margin-bottom: 45px !important;
+    }
+
+
+    /* Hello */
+
+    .hero h5,
+    .hero .eyebrow {
+        margin-bottom: 22px !important;
+    }
+
+
+    /* NAME */
+
+    .hero h1 {
+        font-size: clamp(58px, 16vw, 82px) !important;
+
+        line-height: 0.92 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 34px !important;
+    }
+
+    .hero h1 span {
+        display: block !important;
+
+        margin-top: 5px !important;
+    }
+
+
+    /* SUBTITLE */
+
+    .hero h2,
+    .hero .hero-subtitle {
+        font-size: clamp(21px, 6vw, 28px) !important;
+
+        line-height: 1.35 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 28px !important;
+    }
+
+
+    /* DESCRIPTION */
+
+    .hero p {
+        font-size: 16px !important;
+
+        line-height: 1.65 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 34px !important;
+    }
+
+
+    /* BUTTONS */
+
+    .hero-buttons {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 12px !important;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100% !important;
+
+        min-height: 62px !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE FIX
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .navbar {
+        top: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+
+        padding: 0 14px !important;
+    }
+
+    .hero {
+        padding-top: 135px !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .hero .availability,
+    .hero .status,
+    .hero .available {
+        margin-bottom: 42px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(54px, 15vw, 72px) !important;
+        margin-bottom: 30px !important;
+    }
+
+    .hero h2,
+    .hero .hero-subtitle {
+        font-size: 21px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .hero p {
+        font-size: 15.5px !important;
+        margin-bottom: 30px !important;
+    }
+}
